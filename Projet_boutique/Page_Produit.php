@@ -72,8 +72,40 @@ if (!isset($_SESSION['panier'])) {
             </label>       
         <input style="margin: 0 0 0 50px;" type="submit" value="Appliquer le filtre par marque">
     </form> <!-- Fin du formulaire -->
+    <form method="GET" action="Page_Produit.php">
+    <input type="text" name="search" id="searchInput" placeholder="Rechercher des produits">
+    <button type="submit">Rechercher</button>
+    <a href="Page_Produit.php"><button type="submit">Reset</button></a>
+     </form>
+          <?php
+          // Connexion à la base de données
+          $servername = "localhost";
+          $username = "root";
+          $password = "";
+          $dbname = "boutique_telephone";
+          
+          $conn = new mysqli($servername, $username, $password, $dbname);
+          
+          if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+          }
+          
+          // Récupérer la valeur de recherche depuis l'URL
+          $search = isset($_GET['search']) ? $_GET['search'] : '';
+          
+          // Requête pour récupérer les produits en fonction de la recherche
+          $query = "SELECT * FROM produit WHERE NOM_PRODUIT LIKE '%$search%'";
+          $statement = $pdo->prepare($query);
+          $statement->execute();
+          
+          $products = array();
+          
+          ?>
     <h1>Nos Produits</h1>
     <div class="Produit">
+    <ul id="productList">
+    <!-- Liste de produits sera générée dynamiquement par JavaScript -->
+    </ul>
     <ul>
     <?php while ($row = $statement->fetch(PDO::FETCH_ASSOC)): ?>
         <li>
@@ -109,6 +141,10 @@ if (!isset($_SESSION['panier'])) {
         </div>
         </li>
     <?php endwhile; ?>
+
+    <?php if ($statement->rowCount() === 0): ?>
+    <p>Aucun produit trouvé.</p>
+    <?php endif; ?>
     </ul>
     </div>
 </main>
