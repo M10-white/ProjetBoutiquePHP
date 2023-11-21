@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color:#fff ;
+    background: linear-gradient(45deg, #434343, #202020);
+}
+
+
+main {
+    max-width: 1500px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(80, 80, 80, 0.055);
+}
+
+h2 .h2_detail {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+    overflow: hidden; 
+}
+
+.link {
+    right: 0;
+    margin: 20px;
+    width: fit-content;
+    position: fixed;
+    text-decoration: 0;
+    background-color: #37a6ff;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+span {
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+    color: #fff;
+}
+
+img {
+    max-width: 200px;
+    height: auto;
+}
+
+.Produit {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.Produit ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Modifier cette ligne */
+}
+
+.Produit li {
+    flex-basis: calc(50% - 0px); 
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box; /* Inclut les marges et les bordures dans la largeur */
+}
+
+.detail_produit img {
+    max-width: 100%;
+    height: 500px;
+    margin: 10px auto; 
+    display: block; /* Assurez-vous que l'image est un bloc pour appliquer les marges automatiques */
+}
+
+.description_generale {
+    vertical-align: bottom;
+}
+
+.description_produit {
+    text-align: left;
+    justify-items: flex-end;
+}
+
+.description_detail_produit{
+    border: 1.5px solid rgba(0, 0, 0, 0.178);
+    padding: 10px;
+}
+
+/* Animation de survol d'image */
+.image_produit {
+    max-width: 200px;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.image_produit:hover {
+    transform: scale(1.1); 
+}
+
+.Produit li:hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ajoutez ces styles à votre fichier CSS (Boutique.css) */
+.marque-filtre {
+    text-align: center; /* Centrer le contenu */
+}
+
+.trois-colonnes {
+    display: flex;
+    justify-content: space-between; /* Espacement égal entre les colonnes */
+}
+
+.colonne {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1; /* Chaque colonne prend 33.33% de l'espace */
+}
+
+.colonne li {
+    display: block;
+    margin-bottom: 10px; /* Espacement entre les éléments de la colonne */
+}
+
+.boutonD {
+    float: right;
+    background-color: #000000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 10%;
+}
+
