@@ -7,6 +7,8 @@ session_start();
         <meta charset="UTF-8">
         <title>Qui-sommes nous?</title>
         <link href="Boutique.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="../images/icon.png">
+
     </head>
     <body>
     <main style="width: 350px; text-align: center;">

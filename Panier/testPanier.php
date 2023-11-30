@@ -37,6 +37,8 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Panier</title>
     <link rel="stylesheet" href="testPanier.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon.png">
+
 </head>
 <body>
     <header>

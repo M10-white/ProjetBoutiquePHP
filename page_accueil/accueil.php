@@ -8,7 +8,8 @@ session_start();
     <meta charset="UTF-8">
     <title>GemsPhones</title>
     <link rel="stylesheet" href="accueil.css">
-    
+    <link rel="icon" type="image/x-icon" href="../images/icon.png">
+
 </head>
 <body>
 

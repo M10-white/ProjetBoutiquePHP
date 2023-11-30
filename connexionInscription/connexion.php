@@ -1,3 +1,5 @@
+<link rel="icon" type="image/x-icon" href="../images/icon.png">
+
 <?php
 session_start();
 
@@ -44,8 +46,8 @@ $conn->close();
 <div class="login-container">
 <div class="form-container">
     <form method="post" action="connexion.php">
-        Nom d'utilisateur: <input type="text" name="username"><br>
-        Mot de passe: <input type="password" name="password"><br>
+        Nom d'utilisateur: <input type="text" name="username" required><br>
+        Mot de passe: <input type="password" name="password" required><br>
         <input class="opacity" type="submit" value="Se connecter">
         <a href="inscription.php" class="opacity"><input type="button" value="Pas de compte ?"></a> 
         <a href="../page_accueil/accueil.php" class="opacity">retour accueil</a> 

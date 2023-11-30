@@ -1,3 +1,5 @@
+
+<link rel="icon" type="image/x-icon" href="../images/icon.png">
 <?php
 session_start();
 if(isset($_SESSION['userId'])) {
