@@ -42,7 +42,8 @@ a {
     position: relative;
     width: 22.2rem;
 }
-.form-container {
+.form-container2 {
+    width: 586px;
     border: 1px solid hsla(0, 0%, 65%, 0.158);
     box-shadow: 0 0 36px 1px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -53,8 +54,29 @@ a {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    margin: 50px 700px 50px auto;
 }
-
+.form-container {
+    width: 515px;
+    border: 1px solid hsla(0, 0%, 65%, 0.158);
+    box-shadow: 0 0 36px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
+    z-index: 99;
+    padding: 2rem;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin: 50px 700px 50px auto;
+}
+.button {
+    background-color: #292929f0;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
 .login-container form input {
     display: block;
     padding: 14.5px;
@@ -115,7 +137,9 @@ a {
     -o-transform: scale(1.02);
 }
 
-
+td {
+    text-align: center;
+}
 
 .opacity {
     opacity: 0.6;

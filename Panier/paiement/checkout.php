@@ -19,8 +19,8 @@ $checkout_session = \Stripe\Checkout\Session::create([
     'quantity' => $_GET['montant'],
   ]],
   'mode' => 'payment',
-  'success_url' => $YOUR_DOMAIN . '/boutique/boutique_telephone/Panier/paiement/paiementOK.php',
-  'cancel_url' => $YOUR_DOMAIN . '/boutique/boutique_telephone/Panier/paiement/paiementKO.php',
+  'success_url' => $YOUR_DOMAIN . '/boutique_telephone/Panier/paiement/paiementOK.php',
+  'cancel_url' => $YOUR_DOMAIN . '/boutique_telephone/Panier/paiement/paiementKO.php',
 ]);
 
 header("HTTP/1.1 303 See Other");

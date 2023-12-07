@@ -38,7 +38,7 @@ $conn->close();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Connexion</title>
+    <title>GemsPhones</title>
     <link rel="stylesheet" href="css.css">
 </head>
 <body>

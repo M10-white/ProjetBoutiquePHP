@@ -32,3 +32,11 @@ footer {
     filter: brightness(120%);
 }
 
+.admin{
+    text-decoration: none;
+    color: rgba(112, 112, 112, 0.603);
+}
+
+.footer-content a:hover {
+    color:#7a7a7a ;
+}

@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Inscription</title>
+    <title>GemsPhones</title>
 </head>
 <body>
     <section class="container">

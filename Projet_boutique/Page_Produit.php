@@ -74,11 +74,14 @@ if (!isset($_SESSION['panier'])) {
             </label>       
         <input style="margin: 0 0 0 50px;" type="submit" value="Appliquer le filtre par marque">
     </form> <!-- Fin du formulaire -->
-    <form method="GET" action="Page_Produit.php">
-    <input type="text" name="search" id="searchInput" placeholder="Rechercher des produits">
+
+    <!-- Barre de recherche -->
+    <form method="GET" style="margin: 50px 0px 50px 450px;" action="Page_Produit.php">
+    <input type="text" style="height: 50px; width: 500px;" name="search" id="searchInput" placeholder="Rechercher des produits">
     <button type="submit">Rechercher</button>
     <a href="Page_Produit.php"><button type="submit">Reset</button></a>
      </form>
+
           <?php
           // Connexion à la base de données
           $servername = "localhost";

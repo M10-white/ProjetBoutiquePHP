@@ -67,7 +67,7 @@ if (isset($_POST['bouton'])) {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title><?= $nom_produit ?></title>
+    <title>GemsPhones</title>
     <link href="Boutique.css" rel="stylesheet">
 </head>
 <body>

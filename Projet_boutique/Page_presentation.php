@@ -5,10 +5,9 @@ session_start();
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Qui-sommes nous?</title>
+        <title>GemsPhones</title>
         <link href="Boutique.css" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="../images/icon.png">
-
     </head>
     <body>
     <main style="width: 350px; text-align: center;">
