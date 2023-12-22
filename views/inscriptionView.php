@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Inscription</title>
+    <title>GemsPhones</title>
     <link rel="stylesheet" href="views/css.css">
 </head>
 <body>
-<div class="container">
-    <div class="login-container">
-        <div class="form-container">
-            <form method="post" action="index.php?page=inscription">
-                <input type="text" name="username" placeholder="Nom d'utilisateur" required>
-                <input type="password" name="password" placeholder="Mot de passe" required>
-                <input type="submit" value="S'inscrire">
-            </form>
-            <?php if (isset($inscriptionStatus)): ?>
-                <p><?php echo $inscriptionStatus; ?></p>
-            <?php endif; ?>
-            <div class="links">
-                <a href="index.php?page=connexion"><button type="button">Connexion</button></a>
-                <a href="index.php?page=accueil"><button type="button">Accueil</button></a>
+    <section class="container">
+        <div class="login-container">
+            <div class="form-container">
+                <form action="inscription.php" method="post">
+                    Nom d'utilisateur: <input type="text" name="username" required><br>
+                    Mot de passe: <input type="password" name="password" required><br>
+                    Confirmer le mot de passe :<input type="password" name="confirm_password" required><br>
+                    <input class="opacity" type="submit" value="S'inscrire">
+                    <a href="connexion.php" class="opacity"><input type="button" value="Déjà un compte ->"></a> 
+                    <a href="./index.php" class="opacity">retour accueil</a> 
+                    <?php if (isset($inscriptionStatus)): ?>
+                    <p><?php echo $inscriptionStatus; ?></p>
+                    <?php endif; ?>
+                </form>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 </body>
 </html>
+</head>
