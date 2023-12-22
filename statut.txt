@@ -1,0 +1,20 @@
+Obligatoire :
+
+erreur inscription du a lien bdd
+panier modif bdd via boutton 
+
+
+
+bof : 
+
+bouton filtre qui ramenne a l'accueil 
+
+
+pas grave :
+
+footer trop haut dans page co admin 
+admin dashboard merreur sql 
+erreur sql afficher dans panier
+
+
+ 

@@ -37,7 +37,7 @@ if(isset($_SESSION['userId'])) {
     <p>
       Paiement réussi      
     </p>
-    <a href="../../page_accueil/accueil.php"><button style="margin: 0 30px 0 0;">CONTINUER</button>
+    <a href="index.php?page=accueil"><button style="margin: 0 30px 0 0;">CONTINUER</button>
   </section>
 </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 21 nov. 2023 à 09:59
+-- Généré le : mar. 19 déc. 2023 à 11:12
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -24,6 +24,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_admin` int(50) NOT NULL,
+  `admin_username` varchar(100) NOT NULL,
+  `admin_password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `admin_username`, `admin_password`) VALUES
+(1, 'admin', '1234');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `commandes`
 --
 
@@ -32,6 +51,16 @@ CREATE TABLE `commandes` (
   `date_commande` timestamp NOT NULL DEFAULT current_timestamp(),
   `payer` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `commandes`
+--
+
+INSERT INTO `commandes` (`id`, `date_commande`, `payer`) VALUES
+(1, '2023-12-05 08:43:21', 'OK'),
+(2, '2023-12-04 08:44:40', 'OK'),
+(3, '2023-12-04 08:30:40', 'KO'),
+(14, '0000-00-00 00:00:00', 'OK');
 
 -- --------------------------------------------------------
 
@@ -72,7 +101,9 @@ INSERT INTO `contenue` (`clients_id`, `produits_id`, `quantité`) VALUES
 (21, 1, 0),
 (22, 1, 0),
 (NULL, 1, 0),
-(14, 8, 2);
+(14, 8, 4),
+(14, 7, 1),
+(14, 9, 1);
 
 -- --------------------------------------------------------
 
@@ -179,7 +210,7 @@ CREATE TABLE `users` (
   `id` int(100) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `panier_id` int(11) DEFAULT NULL
+  `panier_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -207,13 +238,17 @@ INSERT INTO `users` (`id`, `username`, `password`, `panier_id`) VALUES
 (18, 'unekjhdsklf', 'test', 18),
 (20, 'iouezrayo', 'test', 20),
 (21, 'username', 'test', 21),
-(22, 'test', 'test', 22),
-(23, 'dfDfdf', '$2y$10$u2hud9Mm/6.kOf/1X4In0uNgMOcC2LCL1szSCF3.u02', NULL),
-(24, 'test', '$2y$10$x/vHD5/T84hCBDWoVXlPye9nGsT5MV695Y5dZ.QGwgC', NULL);
+(22, 'test', 'test', 22);
 
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Index pour la table `commandes`
@@ -253,10 +288,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT pour la table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT pour la table `commandes`
 --
 ALTER TABLE `commandes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `panier`
@@ -274,7 +315,7 @@ ALTER TABLE `produit`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- Contraintes pour les tables déchargées
@@ -284,20 +325,19 @@ ALTER TABLE `users`
 -- Contraintes pour la table `contenue`
 --
 ALTER TABLE `contenue`
-  ADD CONSTRAINT `contenue_ibfk_1` FOREIGN KEY (`clients_id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `contenue_ibfk_2` FOREIGN KEY (`produits_id`) REFERENCES `produit` (`ID_PRODUIT`);
 
 --
 -- Contraintes pour la table `panier`
 --
 ALTER TABLE `panier`
-  ADD CONSTRAINT `panier_ibfk_1` FOREIGN KEY (`contenue_id`) REFERENCES `contenue` (`clients_id`);
+  ADD CONSTRAINT `panier_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`panier_id`);
 
 --
 -- Contraintes pour la table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`panier_id`) REFERENCES `panier` (`id`);
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`id`) REFERENCES `contenue` (`clients_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

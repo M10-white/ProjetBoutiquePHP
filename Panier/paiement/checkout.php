@@ -1,27 +1,37 @@
 <?php
 session_start();
-?>
-
-<?php
-
 require_once '../../vendor/autoload.php';
 require_once '../../vendor/secret.php';
 
 \Stripe\Stripe::setApiKey($stripeSecretKey);
-header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'http://localhost';
+$YOUR_DOMAIN = 'http://localhost/dashboard';
 
-$checkout_session = \Stripe\Checkout\Session::create([
-  'line_items' => [[
-    # Provide the exact Price ID (e.g. pr_1234) of the product you want to sell
-    'price' => 'price_1ODTaZIo9ERN19EjQJmCQqK2',
-    'quantity' => $_GET['montant'],
-  ]],
-  'mode' => 'payment',
-  'success_url' => $YOUR_DOMAIN . '/boutique_telephone/Panier/paiement/paiementOK.php',
-  'cancel_url' => $YOUR_DOMAIN . '/boutique_telephone/Panier/paiement/paiementKO.php',
-]);
+$montant = isset($_GET['montant']) ? $_GET['montant'] : 0;
 
-header("HTTP/1.1 303 See Other");
-header("Location: " . $checkout_session->url);
+try {
+    $checkout_session = \Stripe\Checkout\Session::create([
+        'payment_method_types' => ['card'],
+        'line_items' => [[
+            'price_data' => [
+                'currency' => 'eur',
+                'product_data' => [
+                    'name' => 'Total du Panier',
+                ],
+                'unit_amount' => $montant,
+            ],
+            'quantity' => 1,
+        ]],
+        'mode' => 'payment',
+        'success_url' => $YOUR_DOMAIN . '/boutique_telephone2/Panier/paiement/paiementOK.php',
+        'cancel_url' => $YOUR_DOMAIN . '/boutique_telephone2/Panier/paiement/paiementKO.php',
+    ]);
+
+    header("HTTP/1.1 303 See Other");
+    header("Location: " . $checkout_session->url);
+} catch (Exception $e) {
+    error_log("Error: " . $e->getMessage());
+    header("Location: " . $YOUR_DOMAIN . '/boutique_telephone2/Panier/paiement/paiementKO.php');
+    exit();
+}
+?>

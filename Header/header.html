@@ -2,19 +2,23 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>GemsPhones</title>
+    <title>Telephone boutique</title>
     <link rel="stylesheet" href="../header/header.css">
     <link href="Boutique.css" rel="stylesheet">
-    <link href="header.css" rel="stylesheet">
+    <link href="Header/header.css" rel="stylesheet">
 </head>
 <body>
 <div class="menu">
-        <a href="../page_accueil/accueil.php"><img class="logo2" src="../images/logo.png" ></a>
-        <a href="../Projet_boutique/Page_Produit.php" class="compteG">Nos produits</a>
-        <a href="../Projet_boutique/Page_presentation.php" class="compteG">Qui sommes-nous ?</a>
-        <a href="../Panier/testPanier.php" class="compteD">Panier</a>
-        <a href="../connexionInscription/inscription.php" class="compteD">Inscription</a>
-        <a href="../connexionInscription/connexion.php" class="compteD">Connexion</a>
+    <a href="index.php?page=accueil"><img class="logo" src="images/logo.png"></a>
+    <a href="index.php?page=produits" class="compteG">Nos produits</a>
+    <a href="index.php?page=presentation" class="compteG">Qui sommes-nous ?</a>
+    <a href="index.php?page=panier" class="compteD">Panier</a>
+    <a href="index.php?page=inscription" class="compteD">Inscription</a>
+    <a href="index.php?page=connexion" class="compteD">Connexion</a>
+        <form id="recherche" method="get" action="/search" autocomplete="off">
+            <input name="recherche"  type="text" placeholder="..." />
+            <input id="bouton-submit" type="submit" value="Rechercher" />
+        </form>
     </div>
 
 <!--CREE UN HEADER ALTERNATIF POUR LES CLIENT DEJA CONNECT2 
