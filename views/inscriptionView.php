@@ -8,7 +8,7 @@
     <section class="container">
         <div class="login-container">
             <div class="form-container">
-                <form action="inscription.php" method="post">
+                <form action="" method="post">
                     Nom d'utilisateur: <input type="text" name="username" required><br>
                     Mot de passe: <input type="password" name="password" required><br>
                     Confirmer le mot de passe :<input type="password" name="confirm_password" required><br>

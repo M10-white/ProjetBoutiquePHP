@@ -1,7 +1,7 @@
 <?php
 class AdminDashboardController {
     private $commandeModel;
-
+    
     public function __construct($commandeModel) {
         $this->commandeModel = $commandeModel;
     }

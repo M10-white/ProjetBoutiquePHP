@@ -16,9 +16,9 @@
     <div class="form-container">
         <h2>Résumé des commandes</h2>
         <p>Total des commandes : <?= $totalCommands ?></p>
-        <p>Dernière commande : <?= $latestOrder['id'] ?? 'Aucune commande' ?></p>
-        <p>Date de la dernière commande : <?= $latestOrder['date_commande'] ?? 'N/A' ?></p>
-        <p>Statut de paiement de la dernière commande : <?= $latestOrder['payer'] ?? 'N/A' ?></p>
+        <p>Dernière commande : <?= $latestOrder['id'] ?></p>
+        <p>Date de la dernière commande : <?= $latestOrder['date_commande'] ?></p>
+        <p>Statut de paiement de la dernière commande : <?= $latestOrder['payer'] ?></p>
     </div>
 
     <div class="form-container">
